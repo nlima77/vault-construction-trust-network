@@ -21,23 +21,23 @@
 
 Based on the original README and documentation, OP Vault / Vault AI focused on:
 
-- uploading documents into a custom knowledge base,
-- using OpenAI and Pinecone vector search,
-- asking questions about uploaded documents,
-- returning answers with source file/context snippets,
-- supporting human-readable document formats such as PDF, text, epub, books, letters, and similar records.
+- uploading documents into a custom knowledge base
+- using OpenAI and Pinecone vector search
+- asking questions about uploaded documents
+- returning answers with source file/context snippets
+- supporting human-readable document formats such as PDF, text, epub, books, letters, and similar records
 
 ## How this project differs
 
-VAULT Construction Trust Network is focused on a specific real-world vertical:
+Construction Record Vault is focused on a specific real-world vertical:
 
-- construction project documentation,
-- warranties,
-- permits,
-- change orders,
-- homeowner/contractor records,
-- chain-of-custody and tamper-evident proof records,
-- future proof-layer research.
+- construction project documentation
+- warranties
+- permits
+- change orders
+- homeowner/contractor records
+- chain-of-custody and tamper-evident proof records
+- future proof-layer research
 
 ## Required attribution practice
 
@@ -46,11 +46,11 @@ If we fork, copy, modify, or distribute any original OP Vault / Vault AI code:
 1. Keep the original MIT license text.
 2. Keep `Copyright (c) 2023 pashpashpash`.
 3. Clearly state which portions are derived from the original repository.
-4. Do not imply the original author endorses this community-led effort unless verified in writing.
+4. Do not imply the original author endorses this community-led effort unless formal written authorization exists.
 
 ## Contact status summary
 
-Good-faith contact attempts should be documented separately in project evidence records. As of the current notes:
+Good-faith contact attempts have been documented separately in the evidence log. As of the current notes:
 
 - Discord invite appears invalid/inaccessible.
 - X direct messaging appears unavailable/shut off.
@@ -59,4 +59,4 @@ Good-faith contact attempts should be documented separately in project evidence 
 
 Therefore, the safe public phrasing remains:
 
-> Community-led and unaffiliated unless verified.
+> Community-led and unaffiliated.

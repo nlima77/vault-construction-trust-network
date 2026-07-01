@@ -1,66 +1,37 @@
-# VAULT Construction Trust Network
+# Construction Record Vault
 
-**Community-led / unaffiliated unless verified.**
+**Community-led and unaffiliated.**
 
-VAULT Construction Trust Network is a community-led effort exploring AI-powered construction document vaults, tamper-evident proof records, and chain-of-custody infrastructure for real-world construction, warranty, permit, service, and property documentation.
+Construction records are scattered and hard to verify. This project explores how to make project documentation organized, portable, and tamper-evident for real-world construction, warranty, permit, insurance, and property documentation.
 
-This repository is **not presented as the official Vault AI project** and does **not** claim approval, partnership, ownership, or control by the original Vault AI team unless that is verified in writing later.
+This project is **not presented as the official Vault AI project** and is **not claiming approval, partnership, or control by the original Vault AI team**.
 
----
+## What we are building
 
-## Plain-English mission
-
-Construction records are scattered across emails, phones, contractor portals, file cabinets, text messages, and photo galleries. When a homeowner sells a property, files an insurance claim, requests warranty service, or disputes project history, the paperwork is often incomplete or hard to trust.
-
-We are exploring a practical vault that can:
-
-- organize construction documents and job photos,
-- summarize records with AI,
-- flag missing or incomplete paperwork,
-- preserve project history,
-- create tamper-evident proof records,
-- and eventually support a verifiable reputation trail for contractors, homeowners, and property records.
-
-The goal is useful trust infrastructure — not hype.
-
----
-
-## First use case: Construction Document Vault
-
-The first practical product should focus on organizing and verifying project records such as:
+The first practical use case is a **Construction Document Vault** for organizing and verifying project records such as:
 
 - contracts
-- proposals
 - permits
-- inspection records
 - warranties
 - invoices
-- receipts
 - change orders
 - lien waivers
+- inspection records
 - job photos
-- completion photos
 - service notes
-- insurance/restoration records
 
-The MVP should help a homeowner or contractor answer:
-
-> “What was done, when was it done, who did it, what documents prove it, and what is missing?”
-
----
+The goal is to help homeowners, contractors, real estate professionals, and service providers keep a clean project history that can be searched, summarized, and verified.
 
 ## Product-first roadmap
 
 We are intentionally approaching this in layers:
 
-1. **Useful product** — AI-organized construction document vault
-2. **Proof layer** — tamper-evident hashes, timestamps, and chain-of-custody metadata
+1. **Useful product** — project record packet / construction document vault
+2. **Proof layer** — tamper-evident hashes, timestamps, salted commitments, and private/off-chain records
 3. **Open documentation** — public roadmap, risks, contribution process, and attribution
-4. **Token utility research** — only after real product and trust foundations exist
+4. **Legal/compliance review before any broader claims**
 
-We will not lead with token price, speculation, or hype.
-
----
+This public project does not promote digital-asset speculation, price discussion, or investment expectations.
 
 ## Original Vault AI attribution
 
@@ -71,81 +42,63 @@ This effort was inspired by the original Vault AI / OP Vault document-intelligen
 - Original docs: https://docs.vault.pash.city/
 - Original repo description: OP Vault used OpenAI + Pinecone to let users upload documents and ask questions over their contents.
 - License shown on original repo: MIT License
-- Original copyright notice shown in the original repository: `Copyright (c) 2023 pashpashpash`
+- Original copyright notice shown in the repository: `Copyright (c) 2023 pashpashpash`
 
-If any original Vault AI / OP Vault code is copied, modified, forked, or distributed here, the original MIT license and copyright notice must remain included.
+If any original Vault AI code is copied, modified, forked, or distributed here, the original MIT license and copyright notice must remain included.
 
-See:
+See [`NOTICE.md`](NOTICE.md) and [`docs/original-project-attribution.md`](docs/original-project-attribution.md).
 
-- [`NOTICE.md`](NOTICE.md)
-- [`docs/original-project-attribution.md`](docs/original-project-attribution.md)
+Public docs and demo materials:
 
----
+- [`ROADMAP.md`](ROADMAP.md)
+- [`docs/mvp-spec.md`](docs/mvp-spec.md)
+- [`docs/mvp-demo-implementation-plan.md`](docs/mvp-demo-implementation-plan.md)
+- [`docs/technical-architecture-mvp.md`](docs/technical-architecture-mvp.md)
+- [`docs/threat-model.md`](docs/threat-model.md)
+- [`docs/verification-spec.md`](docs/verification-spec.md)
+- [`docs/financial-communications-policy.md`](docs/financial-communications-policy.md)
+- [`docs/whitepaper-v0.2-outline.md`](docs/whitepaper-v0.2-outline.md)
+- [`demo/`](demo/) — static synthetic MVP demo
+- [`website/`](website/) — simple public landing-page artifact
 
 ## Non-affiliation statement
 
-We attempted to identify and contact the original Vault AI team through available public channels. Based on current notes:
+We attempted to contact the original Vault AI team through the contact channels we could identify. As of the current project notes, we have not received verified cooperation or approval. Direct/private X messaging appears unavailable, the Discord invite appears invalid, and email outreach has not produced a response.
 
-- the original GitHub repository exists and is MIT licensed,
-- the original app/docs exist but appear stale or not actively maintained,
-- the Discord invite appears invalid or inaccessible,
-- X/Twitter direct messaging appears unavailable/shut off,
-- email outreach was attempted through the contact address identified in public materials,
-- no verified cooperation or approval has been received yet.
+Until formal written authorization exists, this repository should be described only as:
 
-Until verified otherwise, this repository should be described only as:
-
-> A community-led, unaffiliated effort inspired by the original Vault AI / OP Vault document-intelligence concept.
-
----
+> A community-led, unaffiliated effort inspired by the original Vault AI document-intelligence concept.
 
 ## What this is not
 
 This is not:
 
-- an official announcement from the original Vault AI team,
-- a claim of ownership over the original Vault AI brand, website, social accounts, or token,
-- investment advice,
-- legal advice,
-- a promise of token utility,
-- a promise of token value, liquidity, profit, or returns,
-- a pump group,
-- a place to post private customer records.
-
----
+- an official announcement from the original Vault AI team
+- a claim of ownership over the original Vault AI brand or social accounts
+- investment advice
+- a promise of digital-asset utility, profit, or returns
+- a promotion group
 
 ## Near-term MVP
 
-The first useful demo should be simple and credible:
+The first demo should be a **Project Record Packet** for a synthetic construction project:
 
-- create a project record,
-- upload a construction document or photo,
-- classify the document type,
-- summarize the document in plain English,
-- flag missing or incomplete records,
-- generate a project timeline,
-- create a document hash for proof-of-integrity,
-- keep private documents off-chain,
-- show proof metadata without exposing customer data.
+- add synthetic project documents/photos
+- classify document type
+- extract suggested metadata with human confirmation
+- flag missing or incomplete records
+- generate a project timeline
+- create SHA-256 proof-of-integrity records
+- use salted commitments when proof records could connect to identifiable project data
+- export originals, `manifest.json`, summary, and a verification script
+- store private documents off-chain
 
-See [`docs/mvp-spec.md`](docs/mvp-spec.md).
+Important: hashes make files tamper-evident since the time of recording. They do not prove the document is authentic, accurate, or that work was performed.
 
----
+## Status
 
-## Repository status
-
-Early planning and documentation phase.
-
-No production system, customer document vault, wallet integration, treasury system, or token utility mechanism should be assumed from this repository unless specifically documented in future releases.
-
----
+Early planning / documentation phase.
 
 ## Contributing
 
-We welcome serious product, security, construction, legal/compliance, and documentation feedback.
-
-Please read:
-
-- [`CONTRIBUTING.md`](CONTRIBUTING.md)
-- [`SECURITY.md`](SECURITY.md)
-- [`DISCLAIMER.md`](DISCLAIMER.md)
+We welcome serious product, security, construction, legal/compliance, and documentation feedback. Please read [`CONTRIBUTING.md`](CONTRIBUTING.md) first.

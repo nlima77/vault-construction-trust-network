@@ -1,6 +1,6 @@
 # Notices and Attribution
 
-This repository is part of a community-led effort currently called **VAULT Construction Trust Network**.
+This repository is part of a community-led effort currently called **Construction Record Vault**.
 
 ## Original project credit
 
@@ -29,10 +29,6 @@ If this repository includes any original Vault AI / OP Vault code, the original 
 
 ## Non-affiliation
 
-This community-led effort is unaffiliated with the original Vault AI team unless verified otherwise.
+This community-led effort is unaffiliated with the original Vault AI team unless formal written authorization exists.
 
-No statement in this repository should be interpreted as claiming official ownership of the original Vault AI project, brand, social accounts, token, website, original code authorship, or original team approvals.
-
-## Trademark / brand caution
-
-The name VAULT is being used here as a working community/project label because of the existing token/community context. This does not claim trademark ownership or official brand succession from the original team.
+No statement in this repository should be interpreted as claiming official ownership of the original Vault AI project, brand, social accounts, website, or original team approvals.

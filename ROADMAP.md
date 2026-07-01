@@ -1,55 +1,53 @@
-# VAULT Construction Trust Network Roadmap
+# Construction Record Vault Roadmap
 
-This roadmap is product-first and trust-first. It intentionally avoids token hype.
+This roadmap is product-first, trust-first, and deliberately non-speculative.
 
 ## Phase 0 — Due Diligence and Documentation
 
-- [ ] Preserve original project attribution
-- [ ] Keep public non-affiliation statement clear
-- [ ] Publish risk/disclaimer language
-- [ ] Publish contribution rules
-- [ ] Document original project contact status
-- [ ] Keep private evidence screenshots out of the public repo
+- [x] Preserve original project attribution
+- [x] Keep public non-affiliation statement clear
+- [x] Publish disclaimer language
+- [x] Publish contribution rules
+- [x] Document original project contact status
+- [x] Keep private evidence screenshots and private review notes out of the public repo
 
-## Phase 1 — Construction Document Vault MVP
+## Phase 1 — Project Record Packet MVP
 
-- [ ] Create project record model
-- [ ] Upload documents and photos
+- [ ] Create synthetic project record model
+- [ ] Add synthetic documents and photos
 - [ ] Classify document type
-- [ ] Summarize uploaded documents
+- [ ] Extract draft metadata with human confirmation
 - [ ] Flag missing or incomplete documents
 - [ ] Create project timeline
-- [ ] Generate document hash for integrity proof
+- [ ] Generate SHA-256 integrity proof records
 - [ ] Export homeowner-friendly project summary
+- [ ] Export `manifest.json` and offline verification script
 
 ## Phase 2 — Pilot Use Case
 
-- [ ] Build one sanitized sample Certipro-style project vault
+- [ ] Build one synthetic construction project packet
 - [ ] Test contractor/homeowner workflow
-- [ ] Collect feedback from construction, real estate, warranty, and insurance contacts
+- [ ] Collect private feedback from construction, real estate, warranty, and insurance contacts
 - [ ] Improve privacy and permission model
 - [ ] Build secure export flow for owner records
 
 ## Phase 3 — Proof Layer
 
-- [ ] Write proof-layer design document
-- [ ] Decide timestamp/hash architecture
-- [ ] Keep documents off-chain
-- [ ] Store only privacy-preserving metadata/proofs on-chain if used
+- [ ] Publish proof-layer design document
+- [ ] Use salted SHA-256 commitments where proof records could reveal identifying data
+- [ ] Evaluate RFC 3161 timestamping for proof time
+- [ ] Evaluate optional OpenTimestamps anchoring
+- [ ] Keep documents private and off-chain
 - [ ] Validate security model with outside reviewer
 - [ ] Publish limits and risks plainly
 
-## Phase 4 — Open Community Review
+## Phase 4 — Private Review and Counsel Review
 
-- [ ] Create clear issues for product, docs, security, and proof-layer feedback
 - [ ] Invite construction operators and technical reviewers
-- [ ] Invite legal/compliance review before public token utility claims
-- [ ] Keep public language professional and non-speculative
+- [ ] Invite legal/compliance review before public launch claims
+- [ ] Publish anonymized feedback summary when appropriate
+- [ ] Keep public language professional, non-speculative, and product-focused
 
-## Phase 5 — Token Utility Research
+## Not in public scope
 
-- [ ] Do not promise token utility before product validation
-- [ ] Research whether VAULT token can support useful access, verification, reputation, or network incentives
-- [ ] Publish risks and limitations plainly
-- [ ] Avoid price, return, or investment claims
-- [ ] Seek legal review before any token-related utility implementation
+This repository does not publish digital-asset utility plans, price discussion, investment claims, or financial promotion. Any separate digital-asset-related research is internal-only unless and until it receives proper legal/compliance review.

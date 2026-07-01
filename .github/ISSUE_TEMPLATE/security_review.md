@@ -1,6 +1,6 @@
 ---
 name: Security review
-description: Flag a security, privacy, or attribution concern
+about: Flag a security, privacy, or attribution concern
 title: "[Security/Privacy]: "
 labels: security
 assignees: ''
@@ -21,4 +21,4 @@ assignees: ''
 
 ## Sensitive details?
 
-Do not post private customer data, secrets, wallet keys, or exploit steps publicly.
+Do not post private customer data, secrets, or exploit steps publicly.

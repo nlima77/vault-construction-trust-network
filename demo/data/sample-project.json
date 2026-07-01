@@ -1,0 +1,75 @@
+{
+  "projectName": "Sample Patio Cover Project",
+  "projectType": "Patio cover / outdoor living",
+  "customer": "Jane Demo",
+  "address": "123 Demo Lane, Dallas-Fort Worth, TX",
+  "contractor": "Certipro Demo Contractor",
+  "status": "Synthetic demo only",
+  "aiSummary": "This sample project appears to include a proposal, signed contract placeholder, invoice, warranty placeholder, and permit status placeholder. The project record is strong enough for a demo, but the permit needs review and final completion photos are not yet included.",
+  "missingFlags": [
+    "Permit needs verification",
+    "Completion photos missing",
+    "Lien waiver missing",
+    "Inspection record missing or not applicable",
+    "Warranty terms need human review"
+  ],
+  "timeline": [
+    {
+      "date": "2026-06-01",
+      "event": "Proposal created"
+    },
+    {
+      "date": "2026-06-03",
+      "event": "Contract placeholder signed"
+    },
+    {
+      "date": "2026-06-05",
+      "event": "Permit status flagged for review"
+    },
+    {
+      "date": "2026-06-10",
+      "event": "Invoice placeholder created"
+    },
+    {
+      "date": "2026-06-12",
+      "event": "Warranty placeholder added"
+    }
+  ],
+  "documents": [
+    {
+      "file": "proposal.txt",
+      "type": "Proposal",
+      "status": "Present",
+      "sha256": "62f7c7904bced521a36e6aff64168a1cd309952a2d40fb547536591bee527c0e",
+      "summary": "Synthetic proposal for sample patio cover project. Scope: install attached patio cover, concrete anchors, gutter tie-in. Demo only."
+    },
+    {
+      "file": "contract.txt",
+      "type": "Contract",
+      "status": "Present",
+      "sha256": "50c0592353ddd3b749205396422f7620debbeceb523044b36b593d314bea0a9a",
+      "summary": "Synthetic signed contract placeholder. Customer: Jane Demo. Contractor: Certipro Demo. No real customer data."
+    },
+    {
+      "file": "invoice.txt",
+      "type": "Invoice",
+      "status": "Present",
+      "sha256": "78490cada1dabe74607564ba238830837bee479a249daa6404f856c3119cb841",
+      "summary": "Synthetic invoice placeholder. Amount: $8,750. Demo only. No real payment data."
+    },
+    {
+      "file": "warranty.txt",
+      "type": "Warranty",
+      "status": "Present",
+      "sha256": "972eb3f8d54832aa01f513e1feee50204b004e72f0ebdb7c0f6d982c32370842",
+      "summary": "Synthetic workmanship warranty placeholder. Demo only. Terms require review."
+    },
+    {
+      "file": "permit-placeholder.txt",
+      "type": "Permit Placeholder",
+      "status": "Needs review",
+      "sha256": "f464f7e8a882e5d6ac8056f34357d55bc27734aa79cb680c9110970a4e247838",
+      "summary": "Permit status placeholder: Needs review. Demo only."
+    }
+  ]
+}

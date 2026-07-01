@@ -24,7 +24,7 @@ This file summarizes public contact-channel status for transparency. Do not plac
 
 Until verified otherwise, use:
 
-> Community-led and unaffiliated unless verified.
+> Community-led and unaffiliated.
 
 ## Important caution
 
