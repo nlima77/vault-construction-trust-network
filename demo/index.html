@@ -3,37 +3,75 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Construction Record Vault Demo</title>
+  <title>Construction Vault Demo</title>
   <link rel="stylesheet" href="styles.css">
 </head>
 <body>
   <header class="hero">
-    <div class="eyebrow">Community-led / unaffiliated</div>
-    <h1>Construction Document Vault Demo</h1>
-    <p>AI-organized construction records plus tamper-evident proof metadata.</p>
+    <div class="eyebrow">Product-first / privacy-first / proof-first</div>
+    <h1>Construction Vault</h1>
     <p class="tagline">Own your records. Own your proof. Make trust portable.</p>
+    <p>AI-organized construction documents with tamper-evident proof metadata.</p>
   </header>
 
   <main>
-    <section class="notice">
-      <strong>Synthetic demo only.</strong> No real customer data. No financial advice. No legal advice.
+    <section class="notice" role="alert">
+      <strong>🔒 SYNTHETIC SAMPLE — ALL DATA IS FAKE</strong><br>
+      This demo contains no real customer data, no real addresses, and no real financial information. Every record is watermarked as synthetic for demonstration purposes only.
     </section>
 
     <section class="card" id="project-profile"></section>
+
     <section class="card" id="ai-summary"></section>
+
     <section class="grid">
+      <div class="card" id="checklist">
+        <h2>Completeness Checklist</h2>
+        <div id="checklist-content"></div>
+        <div class="progress-wrap" aria-label="Checklist progress">
+          <div class="progress-track">
+            <div class="progress-fill" id="checklist-progress"></div>
+          </div>
+          <div class="progress-label" id="checklist-label">0%</div>
+        </div>
+      </div>
       <div class="card" id="missing-flags"></div>
-      <div class="card" id="timeline"></div>
     </section>
-    <section class="card" id="documents"></section>
-    <section class="card proof-note">
-      <h2>What the proof hashes mean</h2>
-      <p>A document hash is a digital fingerprint. If the file changes, the hash changes. This lets a document be checked later without exposing private contents publicly.</p>
+
+    <section class="card" id="documents">
+      <h2>Document Vault</h2>
+      <div id="documents-content"></div>
+    </section>
+
+    <section class="card" id="metadata-panel">
+      <h2>Metadata Confirmation Panel</h2>
+      <p class="subtle">Click a document in the vault above to review AI-extracted metadata and confirmation status.</p>
+      <div id="metadata-content">
+        <div class="empty-state">Select a document to view extracted metadata.</div>
+      </div>
+    </section>
+
+    <section class="card" id="timeline">
+      <h2>Project Timeline</h2>
+      <div id="timeline-content"></div>
+    </section>
+
+    <section class="card" id="proof-manifest">
+      <h2>Proof Manifest</h2>
+      <p class="subtle">SHA-256 hashes act as tamper-evident fingerprints. If a file changes by even one byte, its hash changes.</p>
+      <div id="manifest-content"></div>
+    </section>
+
+    <section class="card" id="export-preview">
+      <h2>Export Packet Preview</h2>
+      <p class="subtle">This is what Construction Vault would include in a portable export packet for escrow, resale, or dispute resolution.</p>
+      <div id="export-content"></div>
     </section>
   </main>
 
   <footer>
-    <p>Construction Record Vault — product first, privacy first, proof layer second.</p>
+    <p>Construction Vault — product first, privacy first, proof layer second.</p>
+    <p class="subtle">SYNTHETIC SAMPLE. No real data. No backend. No legal or financial advice.</p>
   </footer>
   <script src="app.js"></script>
 </body>

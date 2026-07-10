@@ -1,6 +1,6 @@
 # Disclaimer
 
-Construction Record Vault is an early-stage, community-led project exploring AI-powered construction document vaults and tamper-evident proof infrastructure.
+Construction Vault is an early-stage, community-led project exploring AI-powered construction document vaults and tamper-evident proof infrastructure.
 
 ## Non-affiliation
 

@@ -1,75 +1,359 @@
 {
-  "projectName": "Sample Patio Cover Project",
-  "projectType": "Patio cover / outdoor living",
-  "customer": "Jane Demo",
-  "address": "123 Demo Lane, Dallas-Fort Worth, TX",
-  "contractor": "Certipro Demo Contractor",
-  "status": "Synthetic demo only",
-  "aiSummary": "This sample project appears to include a proposal, signed contract placeholder, invoice, warranty placeholder, and permit status placeholder. The project record is strong enough for a demo, but the permit needs review and final completion photos are not yet included.",
+  "watermark": "SYNTHETIC SAMPLE — ALL DATA IS FAKE",
+  "projectProfile": {
+    "projectName": "42 Maple St — Roof Replacement",
+    "projectType": "Roof Replacement",
+    "address": "42 Maple St, Dallas-Fort Worth, TX",
+    "customer": "SYNTHETIC (Jane A. Demo)",
+    "contractor": "SYNTHETIC (Lone Star Roofing Demo LLC)",
+    "status": "In Progress — Synthetic Demo",
+    "createdDate": "2026-04-10",
+    "targetCompletion": "2026-05-22"
+  },
+  "aiSummary": "SYNTHETIC SAMPLE — This roof replacement project at 42 Maple St includes a signed contract, city permit, initial insurance scope, and partial payment records. A change order for decking replacement was added mid-project. Lien waiver is pending final payment. After photos and final inspection are not yet uploaded. The AI has extracted key metadata from 7 of 10 expected document slots; 3 items remain missing or need human review.",
   "missingFlags": [
-    "Permit needs verification",
-    "Completion photos missing",
-    "Lien waiver missing",
-    "Inspection record missing or not applicable",
-    "Warranty terms need human review"
+    "After Photos — not yet uploaded",
+    "Final Lien Waiver — pending final payment",
+    "Final Inspection Report — scheduled for 2026-05-20",
+    "Permit close-out card — needs verification",
+    "Warranty registration — AI-flagged for human confirmation"
   ],
   "timeline": [
-    {
-      "date": "2026-06-01",
-      "event": "Proposal created"
-    },
-    {
-      "date": "2026-06-03",
-      "event": "Contract placeholder signed"
-    },
-    {
-      "date": "2026-06-05",
-      "event": "Permit status flagged for review"
-    },
-    {
-      "date": "2026-06-10",
-      "event": "Invoice placeholder created"
-    },
-    {
-      "date": "2026-06-12",
-      "event": "Warranty placeholder added"
-    }
+    { "date": "2026-04-10", "event": "Project created in Construction Vault (SYNTHETIC)", "type": "milestone" },
+    { "date": "2026-04-11", "event": "Contract uploaded and AI-classified", "type": "document" },
+    { "date": "2026-04-12", "event": "Insurance scope document uploaded", "type": "document" },
+    { "date": "2026-04-14", "event": "City permit issued (demo permit #DEMO-2026-8841)", "type": "milestone" },
+    { "date": "2026-04-15", "event": "Before photos uploaded (24 images)", "type": "document" },
+    { "date": "2026-04-18", "event": "Roof tear-off completed — change order triggered for decking", "type": "milestone" },
+    { "date": "2026-04-22", "event": "Change Order #1 signed (decking replacement)", "type": "document" },
+    { "date": "2026-04-25", "event": "Mid-project invoice paid — partial lien waiver uploaded", "type": "payment" },
+    { "date": "2026-05-02", "event": "Shingle installation completed", "type": "milestone" },
+    { "date": "2026-05-20", "event": "Final inspection scheduled (placeholder)", "type": "milestone" }
   ],
   "documents": [
     {
-      "file": "proposal.txt",
-      "type": "Proposal",
-      "status": "Present",
-      "sha256": "62f7c7904bced521a36e6aff64168a1cd309952a2d40fb547536591bee527c0e",
-      "summary": "Synthetic proposal for sample patio cover project. Scope: install attached patio cover, concrete anchors, gutter tie-in. Demo only."
-    },
-    {
-      "file": "contract.txt",
+      "id": "doc-001",
+      "file": "contract_roof_replace_42maple.pdf",
       "type": "Contract",
       "status": "Present",
-      "sha256": "50c0592353ddd3b749205396422f7620debbeceb523044b36b593d314bea0a9a",
-      "summary": "Synthetic signed contract placeholder. Customer: Jane Demo. Contractor: Certipro Demo. No real customer data."
+      "confidence": 0.97,
+      "sha256": "a1b2c3d4e5f6a1b2c3d4e5f6a1b2c3d4e5f6a1b2c3d4e5f6a1b2c3d4e5f6a1b2",
+      "summary": "SYNTHETIC — Residential roofing contract. Scope: complete tear-off, synthetic underlayment, architectural shingles, ridge vent, flashing, haul-away.",
+      "metadata": {
+        "parties": {
+          "aiExtracted": "Jane A. Demo (Customer) / Lone Star Roofing Demo LLC (Contractor)",
+          "humanConfirmed": true,
+          "humanValue": "Jane A. Demo (Customer) / Lone Star Roofing Demo LLC (Contractor)"
+        },
+        "dates": {
+          "aiExtracted": "Signed 2026-04-11",
+          "humanConfirmed": true,
+          "humanValue": "Signed 2026-04-11"
+        },
+        "amounts": {
+          "aiExtracted": "$14,500.00 total contract price",
+          "humanConfirmed": true,
+          "humanValue": "$14,500.00"
+        },
+        "permitNumber": {
+          "aiExtracted": "N/A (permit separate)",
+          "humanConfirmed": true,
+          "humanValue": "N/A"
+        }
+      }
     },
     {
-      "file": "invoice.txt",
+      "id": "doc-002",
+      "file": "city_permit_42maple.pdf",
+      "type": "Permit",
+      "status": "Present",
+      "confidence": 0.94,
+      "sha256": "b2c3d4e5f6a1b2c3d4e5f6a1b2c3d4e5f6a1b2c3d4e5f6a1b2c3d4e5f6a1b2c3",
+      "summary": "SYNTHETIC — City of Dallas-Fort Worth building permit for residential roof replacement. Status: Issued.",
+      "metadata": {
+        "parties": {
+          "aiExtracted": "Lone Star Roofing Demo LLC (Permittee)",
+          "humanConfirmed": false,
+          "humanValue": ""
+        },
+        "dates": {
+          "aiExtracted": "Issued 2026-04-14 / Expires 2026-10-14",
+          "humanConfirmed": false,
+          "humanValue": ""
+        },
+        "amounts": {
+          "aiExtracted": "$185.00 permit fee",
+          "humanConfirmed": false,
+          "humanValue": ""
+        },
+        "permitNumber": {
+          "aiExtracted": "DEMO-2026-8841",
+          "humanConfirmed": true,
+          "humanValue": "DEMO-2026-8841"
+        }
+      }
+    },
+    {
+      "id": "doc-003",
+      "file": "invoice_001_42maple.pdf",
       "type": "Invoice",
       "status": "Present",
-      "sha256": "78490cada1dabe74607564ba238830837bee479a249daa6404f856c3119cb841",
-      "summary": "Synthetic invoice placeholder. Amount: $8,750. Demo only. No real payment data."
+      "confidence": 0.96,
+      "sha256": "c3d4e5f6a1b2c3d4e5f6a1b2c3d4e5f6a1b2c3d4e5f6a1b2c3d4e5f6a1b2c3d4",
+      "summary": "SYNTHETIC — Initial invoice for 50% deposit on roof replacement.",
+      "metadata": {
+        "parties": {
+          "aiExtracted": "Billed to: Jane A. Demo / Billed by: Lone Star Roofing Demo LLC",
+          "humanConfirmed": true,
+          "humanValue": "Billed to: Jane A. Demo / Billed by: Lone Star Roofing Demo LLC"
+        },
+        "dates": {
+          "aiExtracted": "Invoice date: 2026-04-12 / Due: 2026-04-19",
+          "humanConfirmed": true,
+          "humanValue": "Invoice date: 2026-04-12 / Due: 2026-04-19"
+        },
+        "amounts": {
+          "aiExtracted": "$7,250.00 (50% deposit)",
+          "humanConfirmed": true,
+          "humanValue": "$7,250.00"
+        },
+        "permitNumber": {
+          "aiExtracted": "N/A",
+          "humanConfirmed": true,
+          "humanValue": "N/A"
+        }
+      }
     },
     {
-      "file": "warranty.txt",
-      "type": "Warranty",
+      "id": "doc-004",
+      "file": "change_order_001_decking.pdf",
+      "type": "Change Order",
       "status": "Present",
-      "sha256": "972eb3f8d54832aa01f513e1feee50204b004e72f0ebdb7c0f6d982c32370842",
-      "summary": "Synthetic workmanship warranty placeholder. Demo only. Terms require review."
+      "confidence": 0.91,
+      "sha256": "d4e5f6a1b2c3d4e5f6a1b2c3d4e5f6a1b2c3d4e5f6a1b2c3d4e5f6a1b2c3d4e5",
+      "summary": "SYNTHETIC — Change Order #1 for plywood decking replacement discovered during tear-off. Approved by customer.",
+      "metadata": {
+        "parties": {
+          "aiExtracted": "Jane A. Demo (Customer) / Lone Star Roofing Demo LLC (Contractor)",
+          "humanConfirmed": true,
+          "humanValue": "Jane A. Demo (Customer) / Lone Star Roofing Demo LLC (Contractor)"
+        },
+        "dates": {
+          "aiExtracted": "Signed 2026-04-22",
+          "humanConfirmed": true,
+          "humanValue": "Signed 2026-04-22"
+        },
+        "amounts": {
+          "aiExtracted": "$2,850.00 additional",
+          "humanConfirmed": false,
+          "humanValue": ""
+        },
+        "permitNumber": {
+          "aiExtracted": "N/A",
+          "humanConfirmed": true,
+          "humanValue": "N/A"
+        }
+      }
     },
     {
-      "file": "permit-placeholder.txt",
-      "type": "Permit Placeholder",
-      "status": "Needs review",
-      "sha256": "f464f7e8a882e5d6ac8056f34357d55bc27734aa79cb680c9110970a4e247838",
-      "summary": "Permit status placeholder: Needs review. Demo only."
+      "id": "doc-005",
+      "file": "lien_waiver_partial_001.pdf",
+      "type": "Lien Waiver",
+      "status": "Present",
+      "confidence": 0.88,
+      "sha256": "e5f6a1b2c3d4e5f6a1b2c3d4e5f6a1b2c3d4e5f6a1b2c3d4e5f6a1b2c3d4e5f6",
+      "summary": "SYNTHETIC — Partial conditional lien waiver for deposit and mid-project payment. Final waiver still pending.",
+      "metadata": {
+        "parties": {
+          "aiExtracted": "Jane A. Demo (Owner) / Lone Star Roofing Demo LLC (Claimant)",
+          "humanConfirmed": false,
+          "humanValue": ""
+        },
+        "dates": {
+          "aiExtracted": "Dated 2026-04-25",
+          "humanConfirmed": false,
+          "humanValue": ""
+        },
+        "amounts": {
+          "aiExtracted": "$10,100.00 through date",
+          "humanConfirmed": false,
+          "humanValue": ""
+        },
+        "permitNumber": {
+          "aiExtracted": "N/A",
+          "humanConfirmed": true,
+          "humanValue": "N/A"
+        }
+      }
+    },
+    {
+      "id": "doc-006",
+      "file": "warranty_workmanship_42maple.pdf",
+      "type": "Warranty",
+      "status": "Needs Review",
+      "confidence": 0.72,
+      "sha256": "f6a1b2c3d4e5f6a1b2c3d4e5f6a1b2c3d4e5f6a1b2c3d4e5f6a1b2c3d4e5f6a1",
+      "summary": "SYNTHETIC — Workmanship warranty document. AI confidence is low because the file appears to be a template with blank fields for registration.",
+      "metadata": {
+        "parties": {
+          "aiExtracted": "Contractor: Lone Star Roofing Demo LLC (template)",
+          "humanConfirmed": false,
+          "humanValue": ""
+        },
+        "dates": {
+          "aiExtracted": "Start date: [BLANK] / Duration: 5 years",
+          "humanConfirmed": false,
+          "humanValue": ""
+        },
+        "amounts": {
+          "aiExtracted": "N/A",
+          "humanConfirmed": true,
+          "humanValue": "N/A"
+        },
+        "permitNumber": {
+          "aiExtracted": "N/A",
+          "humanConfirmed": true,
+          "humanValue": "N/A"
+        }
+      }
+    },
+    {
+      "id": "doc-007",
+      "file": "inspection_mid_project_42maple.pdf",
+      "type": "Inspection Report",
+      "status": "Present",
+      "confidence": 0.89,
+      "sha256": "a1b2c3d4e5f6a1b2c3d4e5f6a1b2c3d4e5f6a1b2c3d4e5f6a1b2c3d4e5f6a1b2",
+      "summary": "SYNTHETIC — Mid-project inspection report: decking replacement approved, dry-in passed, no code deficiencies noted.",
+      "metadata": {
+        "parties": {
+          "aiExtracted": "Inspector: SYNTHETIC (A. Code Demo) / Contractor: Lone Star Roofing Demo LLC",
+          "humanConfirmed": false,
+          "humanValue": ""
+        },
+        "dates": {
+          "aiExtracted": "Inspection date: 2026-04-23",
+          "humanConfirmed": false,
+          "humanValue": ""
+        },
+        "amounts": {
+          "aiExtracted": "N/A",
+          "humanConfirmed": true,
+          "humanValue": "N/A"
+        },
+        "permitNumber": {
+          "aiExtracted": "DEMO-2026-8841",
+          "humanConfirmed": true,
+          "humanValue": "DEMO-2026-8841"
+        }
+      }
+    },
+    {
+      "id": "doc-008",
+      "file": "before_photos_42maple.zip",
+      "type": "Before Photos",
+      "status": "Present",
+      "confidence": 0.95,
+      "sha256": "b2c3d4e5f6a1b2c3d4e5f6a1b2c3d4e5f6a1b2c3d4e5f6a1b2c3d4e5f6a1b2c3",
+      "summary": "SYNTHETIC — 24 before photos: existing shingles, soffit, fascia, decking access, chimney condition, valley detail.",
+      "metadata": {
+        "parties": {
+          "aiExtracted": "Photographer: Lone Star Roofing Demo LLC crew",
+          "humanConfirmed": false,
+          "humanValue": ""
+        },
+        "dates": {
+          "aiExtracted": "Photo date range: 2026-04-15",
+          "humanConfirmed": false,
+          "humanValue": ""
+        },
+        "amounts": {
+          "aiExtracted": "N/A",
+          "humanConfirmed": true,
+          "humanValue": "N/A"
+        },
+        "permitNumber": {
+          "aiExtracted": "N/A",
+          "humanConfirmed": true,
+          "humanValue": "N/A"
+        }
+      }
+    },
+    {
+      "id": "doc-009",
+      "file": "after_photos_42maple.zip",
+      "type": "After Photos",
+      "status": "Missing",
+      "confidence": 0.0,
+      "sha256": null,
+      "summary": "SYNTHETIC — After photos not yet uploaded. Expected after shingle install and final cleanup.",
+      "metadata": {
+        "parties": {
+          "aiExtracted": "N/A",
+          "humanConfirmed": true,
+          "humanValue": "N/A"
+        },
+        "dates": {
+          "aiExtracted": "N/A",
+          "humanConfirmed": true,
+          "humanValue": "N/A"
+        },
+        "amounts": {
+          "aiExtracted": "N/A",
+          "humanConfirmed": true,
+          "humanValue": "N/A"
+        },
+        "permitNumber": {
+          "aiExtracted": "N/A",
+          "humanConfirmed": true,
+          "humanValue": "N/A"
+        }
+      }
+    },
+    {
+      "id": "doc-010",
+      "file": "insurance_scope_42maple.pdf",
+      "type": "Insurance Document",
+      "status": "Present",
+      "confidence": 0.93,
+      "sha256": "c3d4e5f6a1b2c3d4e5f6a1b2c3d4e5f6a1b2c3d4e5f6a1b2c3d4e5f6a1b2c3d4",
+      "summary": "SYNTHETIC — Insurance adjuster scope of loss for wind/hail damage. Includes line-item estimates for shingles, underlayment, vents, and gutters.",
+      "metadata": {
+        "parties": {
+          "aiExtracted": "Insured: Jane A. Demo / Carrier: Demo Insurance Co / Adjuster: SYNTHETIC (R. Claim Demo)",
+          "humanConfirmed": false,
+          "humanValue": ""
+        },
+        "dates": {
+          "aiExtracted": "Date of loss: 2026-03-28 / Scope date: 2026-04-05",
+          "humanConfirmed": false,
+          "humanValue": ""
+        },
+        "amounts": {
+          "aiExtracted": "RCV: $13,200.00 / Deductible: $2,500.00 / Net claim: $10,700.00",
+          "humanConfirmed": false,
+          "humanValue": ""
+        },
+        "permitNumber": {
+          "aiExtracted": "N/A",
+          "humanConfirmed": true,
+          "humanValue": "N/A"
+        }
+      }
     }
+  ],
+  "checklist": [
+    { "item": "Signed contract on file", "required": true, "complete": true, "category": "Legal" },
+    { "item": "Building permit issued and accessible", "required": true, "complete": true, "category": "Regulatory" },
+    { "item": "Insurance scope or proof of coverage", "required": true, "complete": true, "category": "Insurance" },
+    { "item": "Before photos (dated, geo-tagged)", "required": true, "complete": true, "category": "Documentation" },
+    { "item": "Mid-project inspection passed", "required": false, "complete": true, "category": "Quality" },
+    { "item": "Change orders signed by both parties", "required": true, "complete": true, "category": "Legal" },
+    { "item": "All invoices matched to work completed", "required": true, "complete": true, "category": "Financial" },
+    { "item": "Partial lien waiver on file", "required": true, "complete": true, "category": "Legal" },
+    { "item": "Final lien waiver on file", "required": true, "complete": false, "category": "Legal" },
+    { "item": "Warranty document completed and registered", "required": true, "complete": false, "category": "Post-Project" },
+    { "item": "Final inspection report / sign-off", "required": true, "complete": false, "category": "Regulatory" },
+    { "item": "After photos uploaded and reviewed", "required": true, "complete": false, "category": "Documentation" }
   ]
 }

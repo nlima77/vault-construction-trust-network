@@ -1,25 +1,440 @@
 <!doctype html>
 <html lang="en">
 <head>
-<meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Construction Record Vault</title>
-<style>body{margin:0;font-family:Arial,sans-serif;background:#090d18;color:#eef4ff;line-height:1.65}header{padding:70px 24px;background:linear-gradient(135deg,#0f172a,#1d4ed8,#a16207);text-align:center}h1{font-size:clamp(36px,7vw,76px);margin:0}h2{color:#93c5fd}main{max-width:1050px;margin:auto;padding:28px 20px}.card{background:#111827;border:1px solid #263244;border-radius:18px;padding:22px;margin:18px 0}a{color:#fde68a}.tag{font-weight:800;color:#fff7cc}.small{color:#cbd5e1;font-size:14px}</style>
-</head><body>
-<header><p class="small">Community-led / unaffiliated</p><h1>Construction Record Vault</h1><p>Organized, portable, tamper-evident construction project documentation.</p><p class="tag">Own your records. Verify your project packet.</p></header>
-<main>
-<section class="card"><h2>The problem</h2><p>Construction records scatter across email, phones, portals, folders, and text threads. Years later, owners, contractors, adjusters, inspectors, and buyers need a clean project history they can rely on.</p></section>
-<section class="card"><h2>The product direction</h2><p>The first MVP is a Project Record Packet: synthetic project records organized by type, timeline, completeness checklist, and privacy-preserving proof metadata.</p></section>
-<section class="card"><h2>Community-led resources</h2><ul>
-<li><a href="https://github.com/nlima77/vault-construction-trust-network">GitHub</a></li>
-<li><a href="https://github.com/nlima77/vault-construction-trust-network/blob/main/ROADMAP.md">Roadmap</a></li>
-<li><a href="https://github.com/nlima77/vault-construction-trust-network/blob/main/docs/mvp-spec.md">MVP Spec</a></li>
-<li><a href="https://github.com/nlima77/vault-construction-trust-network/blob/main/DISCLAIMER.md">Disclaimer</a></li>
-<li><a href="https://github.com/nlima77/vault-construction-trust-network/blob/main/NOTICE.md">Attribution Notice</a></li>
-</ul></section>
-<section class="card"><h2>Original / legacy Vault AI references</h2><p class="small">Provided for attribution and historical context. This community-led effort is unaffiliated unless written authorization exists.</p><ul>
-<li><a href="https://github.com/pashpashpash/vault-ai">Original GitHub</a></li>
-<li><a href="https://vault.pash.city/">Original app/site</a></li>
-<li><a href="https://docs.vault.pash.city/">Original docs</a></li>
-</ul></section>
-<section class="card"><h2>Disclaimer</h2><p>Experimental. No financial advice. No legal advice. No investment claims. No real customer documents in public demos.</p></section>
-</main></body></html>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Construction Vault — AI Organized Construction Records</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#05070a;--bg-2:#0a0f18;--bg-3:#111827;--border:#1e293b;--text:#e2e8f0;--text-dim:#94a3b8;--accent:#f59e0b;--accent-2:#d97706;--accent-glow:rgba(245,158,11,0.15);--blue:#3b82f6;--green:#10b981;--red:#ef4444}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{font-family:'Inter',system-ui,-apple-system,sans-serif;background:var(--bg);color:var(--text);line-height:1.6;-webkit-font-smoothing:antialiased}
+.container{max-width:1200px;margin:0 auto;padding:0 24px}
+
+/* Nav */
+nav{position:fixed;top:0;left:0;right:0;z-index:100;background:rgba(5,7,10,0.85);backdrop-filter:blur(12px);border-bottom:1px solid var(--border)}
+.nav-inner{display:flex;align-items:center;justify-content:space-between;height:64px}
+.logo{font-weight:900;font-size:1.25rem;color:#fff;letter-spacing:-0.02em}
+.logo span{color:var(--accent)}
+.nav-links{display:flex;gap:32px;align-items:center}
+.nav-links a{color:var(--text-dim);text-decoration:none;font-size:0.875rem;font-weight:500;transition:color 0.2s}
+.nav-links a:hover{color:#fff}
+.nav-cta{background:var(--accent);color:#000;padding:8px 20px;border-radius:8px;font-weight:700;font-size:0.875rem;text-decoration:none;transition:all 0.2s}
+.nav-cta:hover{background:var(--accent-2);transform:translateY(-1px)}
+.mobile-menu{display:none;background:none;border:none;color:var(--text);font-size:1.5rem;cursor:pointer}
+
+/* Hero */
+.hero{position:relative;padding:160px 0 100px;overflow:hidden}
+.hero-bg{position:absolute;inset:0;pointer-events:none}
+.hero-bg::before{content:'';position:absolute;top:-50%;left:-20%;width:800px;height:800px;background:radial-gradient(circle,rgba(59,130,246,0.12),transparent 70%);border-radius:50%}
+.hero-bg::after{content:'';position:absolute;bottom:-30%;right:-10%;width:600px;height:600px;background:radial-gradient(circle,rgba(245,158,11,0.1),transparent 70%);border-radius:50%}
+.hero-inner{position:relative;z-index:1;text-align:center}
+.eyebrow{display:inline-flex;align-items:center;gap:8px;background:rgba(245,158,11,0.1);border:1px solid rgba(245,158,11,0.2);color:var(--accent);padding:6px 16px;border-radius:999px;font-size:0.75rem;font-weight:700;text-transform:uppercase;letter-spacing:0.08em;margin-bottom:32px}
+.hero h1{font-size:clamp(2.5rem,6vw,4.5rem);font-weight:900;line-height:1.05;letter-spacing:-0.03em;margin-bottom:24px}
+.hero h1 .gradient{background:linear-gradient(135deg,#fff 30%,var(--accent) 100%);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
+.hero-sub{max-width:640px;margin:0 auto 40px;color:var(--text-dim);font-size:clamp(1rem,2vw,1.25rem);line-height:1.7}
+.hero-btns{display:flex;gap:16px;justify-content:center;flex-wrap:wrap}
+.btn-primary{background:var(--accent);color:#000;padding:16px 32px;border-radius:12px;font-weight:800;font-size:1rem;text-decoration:none;display:inline-flex;align-items:center;gap:8px;transition:all 0.2s;border:none;cursor:pointer}
+.btn-primary:hover{background:var(--accent-2);transform:translateY(-2px);box-shadow:0 12px 40px rgba(245,158,11,0.25)}
+.btn-secondary{background:transparent;color:#fff;padding:16px 32px;border-radius:12px;font-weight:700;font-size:1rem;text-decoration:none;display:inline-flex;align-items:center;gap:8px;border:1px solid var(--border);transition:all 0.2s}
+.btn-secondary:hover{border-color:var(--text-dim);background:rgba(255,255,255,0.03)}
+
+/* Trust bar */
+.trust-bar{padding:32px 0;border-top:1px solid var(--border);border-bottom:1px solid var(--border)}
+.trust-inner{display:flex;justify-content:center;align-items:center;gap:48px;flex-wrap:wrap}
+.trust-item{display:flex;align-items:center;gap:8px;color:var(--text-dim);font-size:0.875rem;font-weight:500}
+.trust-item svg{width:20px;height:20px;flex-shrink:0}
+
+/* Sections */
+.section{padding:100px 0}
+.section-alt{background:var(--bg-2)}
+.section-header{text-align:center;max-width:640px;margin:0 auto 64px}
+.section-header h2{font-size:clamp(1.75rem,4vw,2.75rem);font-weight:800;line-height:1.15;letter-spacing:-0.02em;margin-bottom:16px}
+.section-header p{color:var(--text-dim);font-size:1.125rem}
+
+/* Problem */
+.problem-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:24px}
+.problem-card{background:var(--bg-3);border:1px solid var(--border);border-radius:16px;padding:32px;position:relative;overflow:hidden}
+.problem-card::before{content:'';position:absolute;top:0;left:0;right:0;height:3px;background:linear-gradient(90deg,var(--red),var(--accent))}
+.problem-card h3{font-size:1.125rem;font-weight:700;margin-bottom:12px;color:#fff}
+.problem-card p{color:var(--text-dim);font-size:0.9375rem;line-height:1.7}
+
+/* Solution */
+.solution-grid{display:grid;grid-template-columns:1fr 1fr;gap:64px;align-items:center}
+.solution-visual{background:linear-gradient(135deg,var(--bg-3),var(--bg-2));border:1px solid var(--border);border-radius:20px;padding:40px;position:relative;min-height:400px;display:flex;flex-direction:column;justify-content:center}
+.solution-visual::before{content:'CONSTRUCTION VAULT';position:absolute;top:20px;left:24px;font-size:0.625rem;font-weight:800;letter-spacing:0.15em;color:var(--text-dim);opacity:0.5}
+.doc-stack{display:flex;flex-direction:column;gap:12px}
+.doc-item{background:rgba(255,255,255,0.03);border:1px solid var(--border);border-radius:12px;padding:16px 20px;display:flex;align-items:center;gap:16px;animation:slideIn 0.5s ease-out backwards}
+.doc-item:nth-child(1){animation-delay:0.1s}
+.doc-item:nth-child(2){animation-delay:0.2s}
+.doc-item:nth-child(3){animation-delay:0.3s}
+.doc-item:nth-child(4){animation-delay:0.4s}
+.doc-icon{width:40px;height:40px;border-radius:10px;display:flex;align-items:center;justify-content:center;font-size:1.25rem;flex-shrink:0}
+.doc-icon.contract{background:rgba(59,130,246,0.15);color:var(--blue)}
+.doc-icon.permit{background:rgba(16,185,129,0.15);color:var(--green)}
+.doc-icon.invoice{background:rgba(245,158,11,0.15);color:var(--accent)}
+.doc-icon.photo{background:rgba(239,68,68,0.15);color:var(--red)}
+.doc-info{flex:1}
+.doc-info h4{font-size:0.9375rem;font-weight:600;color:#fff;margin-bottom:2px}
+.doc-info span{font-size:0.75rem;color:var(--text-dim)}
+.doc-status{font-size:0.75rem;font-weight:700;padding:4px 10px;border-radius:6px;background:rgba(16,185,129,0.15);color:var(--green)}
+.doc-status.review{background:rgba(245,158,11,0.15);color:var(--accent)}
+@keyframes slideIn{from{opacity:0;transform:translateX(-20px)}to{opacity:1;transform:translateX(0)}}
+
+/* How it works */
+.steps{display:grid;grid-template-columns:repeat(3,1fr);gap:32px}
+.step{text-align:center;position:relative}
+.step-num{width:56px;height:56px;border-radius:16px;background:var(--bg-3);border:1px solid var(--border);display:flex;align-items:center;justify-content:center;font-size:1.25rem;font-weight:900;color:var(--accent);margin:0 auto 24px;position:relative;z-index:1}
+.step h3{font-size:1.125rem;font-weight:700;margin-bottom:12px}
+.step p{color:var(--text-dim);font-size:0.9375rem;line-height:1.7}
+.step-connector{position:absolute;top:28px;left:calc(50% + 40px);right:calc(-50% + 40px);height:1px;background:linear-gradient(90deg,var(--border),var(--accent),var(--border));opacity:0.4}
+.step:last-child .step-connector{display:none}
+
+/* Features */
+.features-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(320px,1fr));gap:24px}
+.feature-card{background:var(--bg-3);border:1px solid var(--border);border-radius:16px;padding:32px;transition:all 0.3s;position:relative}
+.feature-card:hover{border-color:rgba(245,158,11,0.3);transform:translateY(-4px);box-shadow:0 20px 60px rgba(0,0,0,0.3)}
+.feature-icon{width:48px;height:48px;border-radius:14px;background:rgba(245,158,11,0.1);display:flex;align-items:center;justify-content:center;font-size:1.5rem;margin-bottom:20px}
+.feature-card h3{font-size:1.125rem;font-weight:700;margin-bottom:10px}
+.feature-card p{color:var(--text-dim);font-size:0.9375rem;line-height:1.7}
+
+/* Use cases */
+.usecase-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:24px}
+.usecase-card{background:var(--bg-3);border:1px solid var(--border);border-radius:16px;padding:32px}
+.usecase-card h3{font-size:1.125rem;font-weight:700;margin-bottom:8px;display:flex;align-items:center;gap:10px}
+.usecase-card p{color:var(--text-dim);font-size:0.9375rem;line-height:1.7}
+
+/* Demo CTA */
+.demo-section{background:linear-gradient(135deg,var(--bg-3),var(--bg-2));border:1px solid var(--border);border-radius:24px;padding:64px;text-align:center;margin:0 auto;max-width:900px;position:relative;overflow:hidden}
+.demo-section::before{content:'';position:absolute;top:-100px;right:-100px;width:300px;height:300px;background:radial-gradient(circle,rgba(245,158,11,0.08),transparent 70%);border-radius:50%}
+.demo-section h2{font-size:clamp(1.5rem,3vw,2rem);font-weight:800;margin-bottom:16px;position:relative}
+.demo-section p{color:var(--text-dim);margin-bottom:32px;max-width:480px;margin-left:auto;margin-right:auto;position:relative}
+
+/* Beta CTA */
+.beta-form{display:flex;gap:12px;max-width:480px;margin:32px auto 0;flex-wrap:wrap;justify-content:center}
+.beta-form input{flex:1;min-width:240px;background:var(--bg-3);border:1px solid var(--border);border-radius:12px;padding:14px 18px;color:#fff;font-size:0.9375rem;outline:none;transition:border-color 0.2s}
+.beta-form input:focus{border-color:var(--accent)}
+.beta-form input::placeholder{color:var(--text-dim)}
+
+/* FAQ */
+.faq-item{background:var(--bg-3);border:1px solid var(--border);border-radius:12px;margin-bottom:12px;overflow:hidden}
+.faq-q{padding:20px 24px;display:flex;justify-content:space-between;align-items:center;cursor:pointer;font-weight:600;transition:color 0.2s}
+.faq-q:hover{color:var(--accent)}
+.faq-q::after{content:'+';font-size:1.25rem;color:var(--text-dim);transition:transform 0.2s}
+.faq-item.open .faq-q::after{transform:rotate(45deg)}
+.faq-a{padding:0 24px;max-height:0;overflow:hidden;transition:all 0.3s ease;color:var(--text-dim);line-height:1.7}
+.faq-item.open .faq-a{padding:0 24px 20px;max-height:300px}
+
+/* Footer */
+footer{padding:64px 0 32px;border-top:1px solid var(--border)}
+.footer-grid{display:grid;grid-template-columns:2fr 1fr 1fr 1fr;gap:48px;margin-bottom:48px}
+.footer-brand .logo{margin-bottom:16px}
+.footer-brand p{color:var(--text-dim);font-size:0.875rem;line-height:1.7;max-width:280px}
+.footer-col h4{font-size:0.75rem;font-weight:800;text-transform:uppercase;letter-spacing:0.1em;color:var(--text-dim);margin-bottom:16px}
+.footer-col a{display:block;color:var(--text-dim);text-decoration:none;font-size:0.875rem;padding:4px 0;transition:color 0.2s}
+.footer-col a:hover{color:#fff}
+.footer-bottom{display:flex;justify-content:space-between;align-items:center;padding-top:32px;border-top:1px solid var(--border);flex-wrap:wrap;gap:16px}
+.footer-bottom p{color:var(--text-dim);font-size:0.8125rem}
+
+/* Responsive */
+@media(max-width:900px){
+.solution-grid{grid-template-columns:1fr}
+.steps{grid-template-columns:1fr}
+.step-connector{display:none}
+.footer-grid{grid-template-columns:1fr 1fr}
+.nav-links{display:none}
+.mobile-menu{display:block}
+}
+@media(max-width:600px){
+.hero{padding:120px 0 60px}
+.section{padding:60px 0}
+.demo-section{padding:40px 24px}
+.footer-grid{grid-template-columns:1fr}
+.beta-form input{width:100%}
+}
+</style>
+</head>
+<body>
+
+<nav>
+  <div class="container nav-inner">
+    <div class="logo">CONSTRUCTION<span>VAULT</span></div>
+    <div class="nav-links">
+      <a href="#problem">Problem</a>
+      <a href="#solution">Solution</a>
+      <a href="#features">Features</a>
+      <a href="#demo">Demo</a>
+      <a href="#faq">FAQ</a>
+      <a href="https://github.com/nlima77/vault-construction-trust-network" target="_blank">GitHub</a>
+      <a href="#beta" class="nav-cta">Request Access</a>
+    </div>
+    <button class="mobile-menu" onclick="document.querySelector('.nav-links').classList.toggle('mobile-open')">☰</button>
+  </div>
+</nav>
+
+<section class="hero">
+  <div class="hero-bg"></div>
+  <div class="container hero-inner">
+    <div class="eyebrow">Community-Led / Unaffiliated</div>
+    <h1>Construction records.<br><span class="gradient">Actually organized.</span></h1>
+    <p class="hero-sub">AI-powered document intelligence for contractors. Upload once. Classify automatically. Export a tamper-evident Project Record Packet in one click.</p>
+    <div class="hero-btns">
+      <a href="#beta" class="btn-primary">Request Early Access →</a>
+      <a href="demo/index.html" class="btn-secondary">See the Demo</a>
+    </div>
+  </div>
+</section>
+
+<section class="trust-bar">
+  <div class="container trust-inner">
+    <div class="trust-item"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg> Privacy-First Architecture</div>
+    <div class="trust-item"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="11" width="18" height="11" rx="2"/><path d="M7 11V7a5 5 0 0110 0v4"/></svg> No Training on Your Data</div>
+    <div class="trust-item"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z"/><path d="M14 2v6h6"/><path d="M16 13H8"/><path d="M16 17H8"/><path d="M10 9H8"/></svg> Tamper-Evident Proof Layer</div>
+    <div class="trust-item"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg> Built by a Real Contractor</div>
+  </div>
+</section>
+
+<section class="section" id="problem">
+  <div class="container">
+    <div class="section-header">
+      <h2>Your project records are everywhere. Except where you need them.</h2>
+      <p>Permits in the truck. Contracts in email. Photos on five different phones. Warranties? Good luck.</p>
+    </div>
+    <div class="problem-grid">
+      <div class="problem-card">
+        <h3>🔍 The Scramble</h3>
+        <p>A homeowner calls two years later about a leak. You need the warranty, permit, and photos. They're in a filing cabinet, a Dropbox folder, and someone's old phone.</p>
+      </div>
+      <div class="problem-card">
+        <h3>⚠️ The Liability Gap</h3>
+        <p>Missing lien waivers cost you payment. Missing inspection records kill a sale. Missing change order sign-offs turn into disputes.</p>
+      </div>
+      <div class="problem-card">
+        <h3>📉 The Reputation Risk</h3>
+        <p>Home buyers want documentation. Insurance adjusters want proof. Code inspectors want records. Without them, you look unprofessional — even when the work was perfect.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section section-alt" id="solution">
+  <div class="container">
+    <div class="solution-grid">
+      <div>
+        <div class="section-header" style="text-align:left;margin:0 0 40px">
+          <h2>One vault.<br>Every document.<br>Proof-ready.</h2>
+          <p>Construction Vault reads, classifies, and organizes your project records automatically. Then it wraps them in a tamper-evident packet you can hand to anyone.</p>
+        </div>
+        <div style="display:flex;flex-direction:column;gap:20px">
+          <div style="display:flex;gap:16px;align-items:flex-start">
+            <div style="width:36px;height:36px;border-radius:10px;background:rgba(245,158,11,0.15);display:flex;align-items:center;justify-content:center;flex-shrink:0;font-weight:800;color:var(--accent)">1</div>
+            <div>
+              <h4 style="font-weight:700;margin-bottom:4px">Upload anything</h4>
+              <p style="color:var(--text-dim);font-size:0.9375rem">PDFs, photos, scans, emails. From your phone, laptop, or forwarded email. No folder structures to maintain.</p>
+            </div>
+          </div>
+          <div style="display:flex;gap:16px;align-items:flex-start">
+            <div style="width:36px;height:36px;border-radius:10px;background:rgba(59,130,246,0.15);display:flex;align-items:center;justify-content:center;flex-shrink:0;font-weight:800;color:var(--blue)">2</div>
+            <div>
+              <h4 style="font-weight:700;margin-bottom:4px">AI organizes it</h4>
+              <p style="color:var(--text-dim);font-size:0.9375rem">Documents are classified by type — contract, permit, invoice, warranty, photo, inspection. Key data is extracted and flagged for your review.</p>
+            </div>
+          </div>
+          <div style="display:flex;gap:16px;align-items:flex-start">
+            <div style="width:36px;height:36px;border-radius:10px;background:rgba(16,185,129,0.15);display:flex;align-items:center;justify-content:center;flex-shrink:0;font-weight:800;color:var(--green)">3</div>
+            <div>
+              <h4 style="font-weight:700;margin-bottom:4px">Export proof</h4>
+              <p style="color:var(--text-dim);font-size:0.9375rem">Generate a Project Record Packet — complete with manifest, hashes, timeline, and verification script. Hand it to a buyer, adjuster, or inspector.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="solution-visual">
+        <div class="doc-stack">
+          <div class="doc-item">
+            <div class="doc-icon contract">📄</div>
+            <div class="doc-info"><h4>Contract — 42 Maple St</h4><span>AI classified • $14,500 • Human confirmed</span></div>
+            <div class="doc-status">✓ Confirmed</div>
+          </div>
+          <div class="doc-item">
+            <div class="doc-icon permit">🏛️</div>
+            <div class="doc-info"><h4>City Permit #DEMO-2026-8841</h4><span>AI classified • Issued 2026-04-14</span></div>
+            <div class="doc-status">✓ Confirmed</div>
+          </div>
+          <div class="doc-item">
+            <div class="doc-icon invoice">💰</div>
+            <div class="doc-info"><h4>Invoice — Mid-Project</h4><span>AI classified • $8,750 • Needs review</span></div>
+            <div class="doc-status review">⚠ Review</div>
+          </div>
+          <div class="doc-item">
+            <div class="doc-icon photo">📸</div>
+            <div class="doc-info"><h4>Before Photos (24 images)</h4><span>AI grouped • Uploaded 2026-04-15</span></div>
+            <div class="doc-status">✓ Confirmed</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section" id="features">
+  <div class="container">
+    <div class="section-header">
+      <h2>Built for contractors, not office workers.</h2>
+      <p>Every feature is designed around how trades actually work — from the truck, the job site, and the kitchen table.</p>
+    </div>
+    <div class="features-grid">
+      <div class="feature-card">
+        <div class="feature-icon">🧠</div>
+        <h3>AI Document Classification</h3>
+        <p>Upload a photo of a permit through a dirty windshield. The AI reads it, classifies it, and files it under the right project. No manual tagging.</p>
+      </div>
+      <div class="feature-card">
+        <div class="feature-icon">⚠️</div>
+        <h3>Missing Document Flags</h3>
+        <p>Every project type has a checklist. Roof replacement? You need contract, permit, before/after photos, lien waiver, warranty. The vault tells you what's missing.</p>
+      </div>
+      <div class="feature-card">
+        <div class="feature-icon">📅</div>
+        <h3>Auto-Generated Timeline</h3>
+        <p>Documents are arranged chronologically — contract signed, permit pulled, work started, change order, final inspection. One-click project history.</p>
+      </div>
+      <div class="feature-card">
+        <div class="feature-icon">🔒</div>
+        <h3>Tamper-Evident Proof</h3>
+        <p>Every document gets a SHA-256 fingerprint. Change one comma, the hash changes. Export a manifest anyone can verify offline — no blockchain required.</p>
+      </div>
+      <div class="feature-card">
+        <div class="feature-icon">📱</div>
+        <h3>Mobile-First Capture</h3>
+        <p>Thumb-friendly interface. Take a photo, upload, done. Works on any phone. No app store download required.</p>
+      </div>
+      <div class="feature-card">
+        <div class="feature-icon">🛡️</div>
+        <h3>Privacy-First Architecture</h3>
+        <p>Your documents are processed in isolated environments. We don't train models on your data. We don't sell analytics. You own your records.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section section-alt">
+  <div class="container">
+    <div class="section-header">
+      <h2>Who it's for</h2>
+      <p>Built by a contractor who actually runs jobs. Designed for operators like him.</p>
+    </div>
+    <div class="usecase-grid">
+      <div class="usecase-card">
+        <h3>🏠 Residential Remodelers</h3>
+        <p>Roofers, painters, flooring, kitchen/bath. Generate closeout packets for every job. Hand homeowners a complete project history at final walkthrough.</p>
+      </div>
+      <div class="usecase-card">
+        <h3>🏗️ General Contractors</h3>
+        <p>Manage documentation across subs, permits, inspections, and change orders. Never lose a lien waiver or final inspection again.</p>
+      </div>
+      <div class="usecase-card">
+        <h3>🌪️ Restoration Firms</h3>
+        <p>Insurance claims live or die on documentation. Organize scope documents, photos, invoices, and adjuster reports into one exportable packet.</p>
+      </div>
+      <div class="usecase-card">
+        <h3>🏛️ Specialty Trades</h3>
+        <p>Patio covers, pools, electrical, HVAC. Warranty claims and permit close-outs require clean records. Keep them organized from day one.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section" id="demo">
+  <div class="container">
+    <div class="demo-section">
+      <h2>See it in action — no signup required.</h2>
+      <p>Explore a fully synthetic roof replacement project. Every feature, every document type, every interaction — all running in your browser.</p>
+      <a href="demo/index.html" class="btn-primary">Launch Interactive Demo →</a>
+      <p style="margin-top:20px;font-size:0.8125rem;color:var(--text-dim)">100% synthetic data. No backend. No login. No legal or financial advice.</p>
+    </div>
+  </div>
+</section>
+
+<section class="section section-alt" id="beta">
+  <div class="container" style="text-align:center;max-width:640px">
+    <div class="section-header">
+      <h2>Join the private beta.</h2>
+      <p>We're opening early access to Texas contractors first. Tell us what you do and we'll reach out when a slot opens.</p>
+    </div>
+    <form class="beta-form" onsubmit="event.preventDefault();alert('Thanks! This is a static demo form. For real beta access, contact Neil directly.');">
+      <input type="email" placeholder="you@yourcompany.com" required>
+      <button type="submit" class="btn-primary">Request Access</button>
+    </form>
+    <p style="margin-top:24px;font-size:0.8125rem;color:var(--text-dim)">No spam. No sales calls. Just a conversation about whether this fits your workflow.</p>
+  </div>
+</section>
+
+<section class="section" id="faq">
+  <div class="container" style="max-width:800px">
+    <div class="section-header">
+      <h2>Questions</h2>
+    </div>
+    <div class="faq-item">
+      <div class="faq-q" onclick="this.parentElement.classList.toggle('open')">Is this a real product or just a demo?</div>
+      <div class="faq-a">It's a working prototype built on real construction workflows. The demo uses 100% synthetic data. Private beta access is real — we're testing with select contractors in Texas before general availability.</div>
+    </div>
+    <div class="faq-item">
+      <div class="faq-q" onclick="this.parentElement.classList.toggle('open')">Do I need to understand blockchain or crypto to use this?</div>
+      <div class="faq-a">No. The proof layer uses SHA-256 hashes — standard cryptography that's been around for decades. No wallet, no tokens, no blockchain knowledge required. The MVP works entirely offline if needed.</div>
+    </div>
+    <div class="faq-item">
+      <div class="faq-q" onclick="this.parentElement.classList.toggle('open')">What happens to my documents?</div>
+      <div class="faq-a">You keep full ownership. Documents are processed in isolated environments. We don't train AI models on your data, sell analytics, or share records with third parties. Privacy is the default, not an upsell.</div>
+    </div>
+    <div class="faq-item">
+      <div class="faq-q" onclick="this.parentElement.classList.toggle('open')">Can this replace my existing document storage?</div>
+      <div class="faq-a">Eventually, yes. Today it's designed to sit alongside whatever you use — Dropbox, Google Drive, local folders — and add structure, classification, and proof metadata on top. Export packets can live anywhere.</div>
+    </div>
+    <div class="faq-item">
+      <div class="faq-q" onclick="this.parentElement.classList.toggle('open')">Is this connected to the original Vault AI project?</div>
+      <div class="faq-a">This is a community-led effort inspired by the original Vault AI open-source project (MIT licensed, by pashpashpash). We are unaffiliated with the original team unless formal written authorization is established later. We maintain attribution and respect the original work.</div>
+    </div>
+    <div class="faq-item">
+      <div class="faq-q" onclick="this.parentElement.classList.toggle('open')">Who's building this?</div>
+      <div class="faq-a">Neil Lima, president of Certipro Home Improvement LLC — a real outdoor living contractor in the Dallas-Fort Worth area. He's building the tool he wishes he had for his own projects.</div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="container">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <div class="logo">CONSTRUCTION<span>VAULT</span></div>
+        <p>AI-organized construction records with tamper-evident proof metadata. Built by a contractor, for contractors.</p>
+      </div>
+      <div class="footer-col">
+        <h4>Product</h4>
+        <a href="demo/index.html">Interactive Demo</a>
+        <a href="#features">Features</a>
+        <a href="#beta">Request Access</a>
+      </div>
+      <div class="footer-col">
+        <h4>Resources</h4>
+        <a href="https://github.com/nlima77/vault-construction-trust-network" target="_blank">GitHub</a>
+        <a href="https://github.com/nlima77/vault-construction-trust-network/blob/main/ROADMAP.md" target="_blank">Roadmap</a>
+        <a href="https://github.com/nlima77/vault-construction-trust-network/blob/main/DISCLAIMER.md" target="_blank">Disclaimer</a>
+      </div>
+      <div class="footer-col">
+        <h4>Attribution</h4>
+        <a href="https://github.com/pashpashpash/vault-ai" target="_blank">Original Vault AI</a>
+        <a href="https://vault.pash.city/" target="_blank">Original App</a>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>© 2026 Construction Vault. Community-led project. All materials synthetic unless stated.</p>
+      <p>Experimental. No financial advice. No legal advice. No investment claims.</p>
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>

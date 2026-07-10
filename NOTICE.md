@@ -1,6 +1,6 @@
 # Notices and Attribution
 
-This repository is part of a community-led effort currently called **Construction Record Vault**.
+This repository is part of a community-led effort currently called **Construction Vault**.
 
 ## Original project credit
 

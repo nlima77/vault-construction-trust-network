@@ -1,4 +1,4 @@
-# Construction Record Vault
+# Construction Vault
 
 **Community-led and unaffiliated.**
 
