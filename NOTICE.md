@@ -1,6 +1,6 @@
 # Notices and Attribution
 
-This repository is part of a community-led effort currently called **Construction Vault**.
+This repository is part of a community-led effort currently called **Vault AI**.
 
 ## Original project credit
 

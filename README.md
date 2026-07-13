@@ -1,4 +1,4 @@
-# Construction Vault
+# Vault AI
 
 **Community-led and unaffiliated.**
 

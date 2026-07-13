@@ -1,8 +1,8 @@
-# Construction Vault — Private Reviewer Packet
+# Vault AI — Private Reviewer Packet
 
 ## What this is
 
-You're invited to review an early prototype of **Construction Vault** — an AI-powered document organization tool for construction contractors. This is a product demo, not a pitch. No investment opportunity. No token. No blockchain required.
+You're invited to review an early prototype of **Vault AI** — an AI-powered document organization tool for construction contractors. This is a product demo, not a pitch. No investment opportunity. No token. No blockchain required.
 
 ## What to review
 
@@ -42,7 +42,7 @@ You're invited to review an early prototype of **Construction Vault** — an AI-
 
 ## How to submit feedback
 
-Reply directly to Neil Lima (neil@certipro.pro / WhatsApp) with:
+Reply directly to Project Maintainer (contact@vault-ai.dev / WhatsApp) with:
 1. Your trade/role
 2. 1-10 score on: "I would use this"
 3. Top 3 likes
@@ -65,5 +65,5 @@ Reply directly to Neil Lima (neil@certipro.pro / WhatsApp) with:
 
 ---
 
-**Built by:** Neil Lima, president of Certipro Home Improvement LLC
-**Contact:** neil@certipro.pro
+**Built by:** Project Maintainer, president of Demo Contractor LLC
+**Contact:** contact@vault-ai.dev

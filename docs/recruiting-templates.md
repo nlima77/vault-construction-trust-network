@@ -29,7 +29,7 @@ Thanks man.
 
 Hi [NAME],
 
-I'm Neil Lima, president of Certipro Home Improvement in DFW. I'm building an AI tool for construction document organization — think automatic classification of permits, contracts, warranties, and photos into a single exportable project packet.
+I'm Project Maintainer, president of DemoContractor Home Improvement in Metro. I'm building an AI tool for construction document organization — think automatic classification of permits, contracts, warranties, and photos into a single exportable project packet.
 
 I'd value 15 minutes of your time to review a working prototype. Your perspective as [ROLE/TRADE] would be incredibly useful.
 
@@ -49,7 +49,7 @@ Neil
 
 Hey crew — Neil here. Need some honest eyes on a project I've been working on.
 
-**What:** Construction Vault — AI that reads and organizes construction documents (permits, contracts, warranties, invoices, photos) into a single project packet.
+**What:** Vault AI — AI that reads and organizes construction documents (permits, contracts, warranties, invoices, photos) into a single project packet.
 
 **Why:** Because I'm tired of hunting for paperwork when someone calls 2 years later about a warranty or a buyer wants documentation.
 
@@ -80,7 +80,7 @@ Hi [NAME],
 
 I'm working on a construction tech product and need a legal/compliance sanity check before wider distribution.
 
-**Product:** Construction Vault — AI document classification and tamper-evident project record packets for contractors.
+**Product:** Vault AI — AI document classification and tamper-evident project record packets for contractors.
 
 **Specific concerns:**
 - Product claims wording (what we say the proof layer does/doesn't do)
@@ -94,7 +94,7 @@ Live demo: https://iridescent-mermaid-9bc487.netlify.app
 
 Happy to compensate for your time.
 
-Neil Lima
-neil@certipro.pro
+Project Maintainer
+contact@vault-ai.dev
 
 ---

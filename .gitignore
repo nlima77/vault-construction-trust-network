@@ -1,3 +1,6 @@
 website/demo/
 website/.netlify/
 
+website/.netlify/
+website/demo/scripts/__pycache__/
+
